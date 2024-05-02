@@ -1,0 +1,27 @@
+<!-- result.html -->
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2>Search Result</h2>
+ 
+    {% if book %}
+      <div class="card">
+        <div class="card-body">
+          <img src="{{ book['Image-URL-M']}}">
+          <h5 class="card-title">{{ book['Book-Title'] }}</h5>
+          <p class="card-text">Author: {{ book['Book-Author'] }}</p>
+          <p class="card-text">ISBN: {{ book['ISBN'] }}</p>
+          <p class="card-text">Year Of Publication: {{ book['Year-Of-Publication'] }}</p>
+          
+          <p class="card-text">Publisher: {{ book['Publisher'] }}</p>
+          
+
+          <!-- Add more book details here as needed -->
+        </div>
+      </div>
+    {% else %}
+      <p>No book found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

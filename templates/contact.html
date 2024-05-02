@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #13293d; /* Dark blue background */
+            color: #fff; /* White text color */
+            padding-top: 50px; /* Add space for navbar */
+        }
+        .navbar {
+            background-color: #0b1926; /* Dark blue navbar */
+            border-radius: 0; /* Remove border radius */
+        }
+        .navbar-brand {
+            color: #fff; /* White text color */
+        }
+        .navbar-nav > li > a {
+            color: #fff; /* White text color */
+        }
+        .navbar-nav > li > a:hover,
+        .navbar-nav > li > a:focus {
+            color: #fff; /* Hover color */
+            background-color: #17364f; /* Faint blue on hover */
+        }
+        form {
+            max-width: 500px; /* Limit form width */
+            margin: 0 auto; /* Center form horizontally */
+            background-color: #0b1926; /* Dark blue background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Add shadow */
+        }
+        label {
+            font-weight: bold;
+            color: #fff; /* White text color */
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Include padding and border in width */
+            background-color: #17364f; /* Faint blue background */
+            color: #fff; /* White text color */
+        }
+        input[type="submit"] {
+            background-color: #00a65a; /* Green submit button */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        input[type="submit"]:hover {
+            background-color: #008d4c; /* Darker green on hover */
+        }
+        #submission-message {
+            text-align: center;
+            margin-top: 20px; /* Add space below form */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">My Book Recommender</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/recommend">Recommend</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Display area for the submitted message -->
+        <div id="submission-message" style="text-align:center;">
+            {% if confirmation %}
+                <p>{{ confirmation }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
